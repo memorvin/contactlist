@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+
+  <div id="login-box">
+    <div class="ui middle aligned center aligned grid">
+        <div class="six wide column">
+          <h2 class="ui purple image header">
+            <div class="content">
+              Log-in
+            </div>
+          </h2>
+          <form class="ui large form" id="login-form">
+            <div class="ui stacked segment">
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="mail icon"></i>
+                  <input type="text" name="email" placeholder="E-mail address" id="login-email">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="lock icon"></i>
+                  <input type="password" name="password" placeholder="Password" id="login-password">
+                </div>
+              </div>
+              <div class="ui fluid large purple submit button" id="login-button">Login</div>
+            </div>
+            <div class="ui error message"></div>
+          </form>
+          <div class="ui message">
+            New to us? <a href="#" id="to-register">Sign Up</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div id="register-box">
+      <div class="ui middle aligned center aligned grid">
+          <div class="six wide column">
+            <h2 class="ui purple image header">
+              <div class="content">
+                Register
+              </div>
+            </h2>
+            <form class="ui large form" id="register-form">
+              <div class="ui stacked segment">
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="name" placeholder="Your name" id="name">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="mail icon"></i>
+                    <input type="text" name="email" placeholder="E-mail address" id="register-email">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input type="password" name="password" placeholder="Password" id="register-password">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="picture icon"></i>
+                    <input type="text" name="avatar" placeholder="Image URL" id="avatar">
+                  </div>
+                </div>
+                <div class="ui fluid large purple submit button" id="register-button">Register</div>
+              </div>
+              <div class="ui error message"></div>
+            </form>
+            <div class="ui message">
+              Already have an account? <a href="#" id="to-login">Log In</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  <div id="main">
+    <nav class="AlphabetNav">
+      <a href="#" id="open-create">Add</a>
+      <a href="#">A</a>
+      <a href="#">B</a>
+      <a href="#">C</a>
+      <a href="#">D</a>
+      <a href="#">E</a>
+      <a href="#">F</a>
+      <a href="#">G</a>
+      <a href="#">H</a>
+      <a href="#">I</a>
+      <a href="#">J</a>
+      <a href="#">K</a>
+      <a href="#">L</a>
+      <a href="#">M</a>
+      <a href="#">N</a>
+      <a href="#">O</a>
+      <a href="#">P</a>
+      <a href="#">Q</a>
+      <a href="#">R</a>
+      <a href="#">S</a>
+      <a href="#">T</a>
+      <a href="#">U</a>
+      <a href="#">V</a>
+      <a href="#">W</a>
+      <a href="#">X</a>
+      <a href="#">Y</a>
+      <a href="#">Z</a>
+    </nav>
+
+    <div class="ui four cards" id="contact-list"></div>
+
+    <div class="ui modal small" id="create-modal">
+      <i class="close icon"></i>
+      <div class="header">Create Contact</div>
+      <form class="ui form" id="create-form">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Name" id="create-name">
+        </div>
+        <div class="field">
+          <label>Company</label>
+          <input type="text" name="company" placeholder="Company" id="create-company">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="text" name="email" placeholder="Email" id="create-email">
+        </div>
+        <div class="field">
+          <label>Mobile</label>
+          <input type="text" name="mobile" placeholder="Mobile" id="create-mobile">
+        </div>
+        <div class="field">
+          <label>Home</label>
+          <input type="text" name="home" placeholder="Home" id="create-home">
+        </div>
+        <div class="field">
+          <label>Picture</label>
+          <input type="text" name="picture" placeholder="Picture Link" id="create-picture">
+        </div>
+        <button class="ui button" type="submit" id="add-button">Submit</button>
+      </form> 
+    </div>
+
+  <div class="ui modal small" id="edit-modal">
+      <i class="close icon"></i>
+      <div class="header">Edit Contact</div>
+      <form class="ui form" id="edit-form">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Name" id="edit-name">
+        </div>
+        <div class="field">
+          <label>Company</label>
+          <input type="text" name="company" placeholder="Company" id="edit-company">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="text" name="email" placeholder="Email" id="edit-email">
+        </div>
+        <div class="field">
+          <label>Mobile</label>
+          <input type="text" name="mobile" placeholder="Mobile" id="edit-mobile">
+        </div>
+        <div class="field">
+          <label>Home</label>
+          <input type="text" name="home" placeholder="Home" id="edit-home">
+        </div>
+        <div class="field">
+          <label>Picture</label>
+          <input type="text" name="picture" placeholder="Picture Link" id="edit-picture">
+        </div>
+        <div class="field">
+          <input type="hidden" name="id" id="edit-id">
+        </div>
+        <button class="ui button" type="submit" id="save-button">Submit</button>
+      </form> 
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
